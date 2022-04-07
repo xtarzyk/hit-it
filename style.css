@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  font-size: 3rem;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 760px;
+  height: 500px;
+  background-color: #77c47c;
+}
+.game-container__circle {
+  border: solid;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 50px;
+  background: white;
+}
+
+.red-circle {
+  border: solid;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 50px;
+  background: red;
+}
+
+.green-circle {
+  border: solid;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 50px;
+  background: green;
+}
+
+/*# sourceMappingURL=style.css.map */
