@@ -11,7 +11,7 @@ const createTimer = () => {
     let secondsLeft = 60
     let minutesLeft = 1
     const countDown = setInterval(() => {
-        if (secondsLeft / 60 > 0 && minutesLeft > 0) {
+        if (minutesLeft > 0) {
             timerDiv.innerHTML = `Timer: 0${minutesLeft}:00`
             minutesLeft--
             resetColors(circles)
