@@ -2,16 +2,13 @@ const gameContainer = document.createElement('div')
 gameContainer.classList.add('game-container')
 const circle = document.createElement('div')
 circle.classList.add('game-container__circle')
-let circles = Array.from({length: 5})
+let circles = Array.from({length:5})
 
 const prepareUI = () => circles.fill(circle)
 
 const createCircles = () => {
-    // let id = 0
     circles.forEach(() => {
         const newCircle = circle.cloneNode(true)
-        // newCircle.setAttribute('id', `${id}`)
-        // id++
         gameContainer.appendChild(newCircle)
     })
 }

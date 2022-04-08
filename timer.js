@@ -1,4 +1,4 @@
-import {paintCircle, resetColors} from './circles'
+import {paintCircle,resetColors} from './circles'
 import {scores} from './main'
 
 const timer = document.createElement('div')
