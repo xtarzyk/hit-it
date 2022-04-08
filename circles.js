@@ -3,15 +3,15 @@ gameContainer.classList.add('game-container')
 const circle = document.createElement('div')
 circle.classList.add('game-container__circle')
 let circles = Array.from({length: 5})
-circles.fill(circle)
 
+const prepareUI = () => circles.fill(circle)
 
 const createCircles = () => {
-    let id = 0
+    // let id = 0
     circles.forEach(() => {
         const newCircle = circle.cloneNode(true)
-        newCircle.setAttribute('id', `${id}`)
-        id++
+        // newCircle.setAttribute('id', `${id}`)
+        // id++
         gameContainer.appendChild(newCircle)
     })
 }
@@ -19,13 +19,13 @@ const createCircles = () => {
 const paintCircle = () => {
     const circlesDivs = document.querySelectorAll('.game-container__circle')
     const circlesNum = circlesDivs.length
-    const currentMark = Math.floor(Math.random() * circlesNum)
-    circlesDivs.forEach((circle => {
-        if(Number(circle.getAttribute('id')) === currentMark) {
+    const randomCircleNum = Math.floor(Math.random() * circlesNum)
+    circlesDivs.forEach((circle, index) => {
+        if (index === randomCircleNum) {
             circle.classList.remove('game-container__circle')
             circle.classList.add('red-circle')
         }
-    }))
+    })
 }
 
 const resetColors = () => {
@@ -37,6 +37,12 @@ const resetColors = () => {
     })
 }
 
+prepareUI()
 createCircles()
 
-export {gameContainer, paintCircle, resetColors, createCircles}
+export {
+    gameContainer,
+    paintCircle,
+    resetColors,
+    createCircles
+}

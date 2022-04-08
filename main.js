@@ -1,5 +1,5 @@
-import {timer, createTimer} from "./timer"
-import {gameContainer} from "./circles"
+import {timer, createTimer} from './timer'
+import {gameContainer} from './circles'
 
 const app = document.getElementById('app')
 app.appendChild(timer)

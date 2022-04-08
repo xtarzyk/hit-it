@@ -1,32 +1,30 @@
-import {paintCircle, resetColors} from "./circles"
-import {scores} from "./main"
-
+import {paintCircle, resetColors} from './circles'
+import {scores} from './main'
 
 const timer = document.createElement('div')
 timer.classList.add('timer')
 
 const createTimer = () => {
     const timerDiv = document.querySelector('.timer')
-    let secondsLeft = 59
+    let secondsLeft = 60
     let minutesLeft = 1
     const countDown = setInterval(() => {
-        if (minutesLeft) {
+        if (secondsLeft / 60 > 0 && minutesLeft > 0) {
             timerDiv.innerHTML = `Timer: 0${minutesLeft}:00`
             minutesLeft--
             resetColors()
             paintCircle()
             return
         }
-        if (secondsLeft >= 0) {
+        if (secondsLeft % 60 >= 0) {
+            secondsLeft--
             secondsLeft < 10 ? timerDiv.innerHTML = `Timer: 00:0${secondsLeft}` : timerDiv.innerHTML = `Timer: 00:${secondsLeft}`
-            secondsLeft -= 1
             resetColors()
             paintCircle()
-
-        } else {
-            clearInterval(countDown)
-            alert(`Score: ${scores}`)
+            return
         }
+        clearInterval(countDown)
+        alert(`Score: ${scores}`)
     }, 1000)
 }
 
